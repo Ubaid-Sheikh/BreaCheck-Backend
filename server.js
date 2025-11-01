@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const fetch = require('node-fetch');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('BreachCheck API Running');
 })
 
 app.post('/check-password', async (req, res) => {
@@ -31,6 +32,4 @@ app.post('/check-password', async (req, res) => {
   });
   
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-})
+module.exports = app;
